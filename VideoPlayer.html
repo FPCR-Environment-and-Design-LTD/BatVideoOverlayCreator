@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Player</title>
+</head>
+<body>
+    <h1>Video Player</h1>
+    
+    <!-- Input for selecting a video file -->
+    <input type="file" id="videoFile" accept="video/*">
+    
+    <!-- Video element to display the selected video -->
+    <video id="videoPlayer" controls autoplay></video>
+    
+    <script>
+        // Get references to the input and video elements
+        const videoFileInput = document.getElementById("videoFile");
+        const videoPlayer = document.getElementById("videoPlayer");
+        
+        // Add an event listener to the input for when a file is selected
+        videoFileInput.addEventListener("change", function() {
+            const selectedVideo = videoFileInput.files[0];
+            
+            if (selectedVideo) {
+                // Set the video source to the selected file
+                videoPlayer.src = URL.createObjectURL(selectedVideo);
+            }
+        });
+    </script>
+</body>
+</html>
