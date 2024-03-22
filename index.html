@@ -112,10 +112,13 @@
         // Convert the overlay canvas to a PNG image
         const overlayImage = overlayCanvas.toDataURL("image/png");
 
-        // Create a link to download the PNG
+        // Get the original file name
+        const originalFileName = videoFileInput.files[0].name;
+
+        // Create a link to download the PNG with the original file name
         const downloadLink = document.createElement("a");
         downloadLink.href = overlayImage;
-        downloadLink.download = "overlay.png";
+        downloadLink.download = originalFileName + ".png";
 
         // Trigger a click event to start the download
         downloadLink.click();
