@@ -19,17 +19,19 @@
     <div class="relative p-10">
       <!-- Video element to display the selected video -->
       <video
-        class="z-1 absolute top-0 left-0"
+        class="z-1 absolute top-0 left-0 w-3/4"
         id="videoPlayer"
         autoplay
         controls
+        style="object-fit: contain"
       ></video>
 
       <!-- Canvas element for drawing overlay -->
       <canvas
-        class="z-2 absolute top-0 left-0"
+      class="z-1 absolute top-0 left-0 w-3/4"
         id="overlayCanvas"
         v-if="videoFile"
+        style="object-fit: contain"
       ></canvas>
     </div>
 
