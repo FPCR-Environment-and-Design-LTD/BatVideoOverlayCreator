@@ -1,35 +1,48 @@
-<body>
-  <div class="z-5 flex justify-center items-center">
-    <!-- Input for selecting a video file -->
-    <input type="file" id="videoFile" accept="video/*" />
-    <!-- Button to download the overlay as PNG -->
-    <button id="downloadOverlay" class="btn">Download Overlay as PNG</button>
-    <!-- Slider for brush thickness -->
-    <label for="brushThickness" class="btn">Brush Thickness:</label>
-    <input type="range" id="brushThickness" min="1" max="100" value="50" />
-    <button id="toggleOverlayButton" class="btn">Toggle Overlay</button>
-  </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Overlay Creation Took</title>
+    <style></style>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <div class="flex justify-center items-center pt-10">
-    <h1 class="text-5xl text-center">Overlay Creation Tool</h1>
-  </div>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.8.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex justify-center items-center pt-10"></div>
+      <h1 class="text-5xl text-center">Overlay Creation Tool</h1>
+    </div>
+    <div class="relative p-10">
+      <!-- Video element to display the selected video -->
+      <video
+        class="z-1 absolute top-0 left-0"
+        id="videoPlayer"
+        autoplay
+        controls
+      ></video>
 
-  <div class="relative">
-    <!-- Video element to display the selected video -->
-    <video
-      class="z-1 absolute top-0 left-0 w-3/4 pt-10"
-      id="videoPlayer"
-      autoplay
-      controls
-    ></video>
+      <!-- Canvas element for drawing overlay -->
+      <canvas
+        class="z-2 absolute top-0 left-0"
+        id="overlayCanvas"
+        v-if="videoFile"
+      ></canvas>
+    </div>
 
-    <!-- Canvas element for drawing overlay -->
-    <canvas
-      class="z-2 absolute top-0 left-0 w-3/4 pt-10"
-      id="overlayCanvas"
-      v-if="videoFile"
-    ></canvas>
-  </div>
+    <div class="z-5 flex justify-center items-center">
+      <!-- Input for selecting a video file -->
+      <input type="file" id="videoFile" accept="video/*" />
+      <!-- Button to download the overlay as PNG -->
+      <button id="downloadOverlay" class="btn">Download Overlay as PNG</button>
+      <!-- Slider for brush thickness -->
+      <label for="brushThickness" class="btn">Brush Thickness:</label>
+      <input type="range" id="brushThickness" min="1" max="100" value="50" />
+      <button id="toggleOverlayButton" class="btn">Toggle Overlay</button>
+    </div>
 
     <script>
       // Get references to the input, video, canvas, and download button
