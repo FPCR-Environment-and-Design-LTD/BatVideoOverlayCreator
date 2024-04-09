@@ -34,10 +34,10 @@
         <button id="toggleOverlayButton" class="btn">Toggle Overlay</button>
       </div>
     </div>
-    <div class="relative p-10 max-w-[75%] max-h-[75%]">
+    <div class="relative p-10">
       <!-- Video element to display the selected video -->
       <video
-        class="z-1 absolute top-0 left-0"
+        class="z-1 absolute top-0 left-0 max-w-[75%] max-h-[50%]"
         id="videoPlayer"
         autoplay
         controls
@@ -45,7 +45,7 @@
 
       <!-- Canvas element for drawing overlay -->
       <canvas
-        class="z-2 absolute top-0 left-0"
+        class="z-2 absolute top-0 left-0 max-w-[75%] max-h-[50%]"
         id="overlayCanvas"
         v-if="videoFile"
       ></canvas>
