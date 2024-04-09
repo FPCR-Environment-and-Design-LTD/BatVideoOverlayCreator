@@ -37,17 +37,19 @@
     <div class="relative p-10 items-center flex justify-center w-[50%] h-[40%]">
       <!-- Video element to display the selected video -->
       <video
-        class="z-1 absolute top-0 left-0"
-        id="videoPlayer"
-        autoplay
-        controls
+      class="z-1 absolute top-0 left-0"
+      id="videoPlayer"
+      autoplay
+      controls
       ></video>
 
       <!-- Canvas element for drawing overlay -->
       <canvas
-        class="z-2 absolute top-0 left-0"
-        id="overlayCanvas"
-        v-if="videoFile"
+      class="z-2 absolute top-0 left-0"
+      id="overlayCanvas"
+      v-if="videoFile"
+      width="100%"
+      height="100%"
       ></canvas>
     </div>
 
