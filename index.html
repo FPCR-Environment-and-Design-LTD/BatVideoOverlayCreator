@@ -15,6 +15,17 @@
   <body>
     <div class="flex justify-center items-center pt-10"></div>
       <h1 class="text-5xl text-center">Overlay Creation Tool</h1>
+
+      <div class="flex justify-center items-center">
+        <!-- Input for selecting a video file -->
+        <input type="file" id="videoFile" accept="video/*" />
+        <!-- Button to download the overlay as PNG -->
+        <button id="downloadOverlay" class="btn">Download Overlay as PNG</button>
+        <!-- Slider for brush thickness -->
+        <label for="brushThickness" class="btn">Brush Thickness:</label>
+        <input type="range" id="brushThickness" min="1" max="100" value="50" />
+        <button id="toggleOverlayButton" class="btn">Toggle Overlay</button>
+      </div>
     </div>
     <div class="relative p-10">
       <!-- Video element to display the selected video -->
@@ -31,17 +42,6 @@
         id="overlayCanvas"
         v-if="videoFile"
       ></canvas>
-    </div>
-
-    <div class="flex justify-center items-center">
-      <!-- Input for selecting a video file -->
-      <input type="file" id="videoFile" accept="video/*" />
-      <!-- Button to download the overlay as PNG -->
-      <button id="downloadOverlay" class="btn">Download Overlay as PNG</button>
-      <!-- Slider for brush thickness -->
-      <label for="brushThickness" class="btn">Brush Thickness:</label>
-      <input type="range" id="brushThickness" min="1" max="100" value="50" />
-      <button id="toggleOverlayButton" class="btn">Toggle Overlay</button>
     </div>
 
     <script>
